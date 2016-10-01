@@ -8,7 +8,7 @@ angular.module('LunchCheck', [])
 LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
     $scope.lunchList = "";
-    $scope.resultColor = "black";
+    $scope.resultColor = "";
     $scope.resultBorderWidth = 0;
 
     $scope.checkLunch = function () {
@@ -28,6 +28,14 @@ function LunchCheckController($scope) {
                 $scope.lunchResult = "Enjoy!";
             }
         }
+    }
+
+    $scope.getTextboxStyle = function() {
+        if ($scope.resultColor.length > 0) {
+            return "border-color: " + $scope.resultColor + ";";
+        }
+
+        return "";
     }
 }
 
