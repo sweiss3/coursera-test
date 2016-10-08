@@ -37,6 +37,18 @@
     {
       name: "smartphones",
       quantity: 2
+    },
+    {
+      name: "apples",
+      quantity: 5
+    },
+    {
+      name: "oranges",
+      quantity: 10
+    },
+    {
+      name: "carrots",
+      quantity: 20
     }];
     var boughtItems = [];
 
