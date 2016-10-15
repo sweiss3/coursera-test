@@ -31,13 +31,17 @@
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var controller = this;
-        controller.found = [];
+        //controller.found = [];
         controller.searchTerm = "";
 
         controller.narrowItDown = function () {
-            MenuSearchService.getMatchedMenuItems(controller.searchTerm).then(function success(foundItems) {
+            if (controller.searchTerm) {
+                 MenuSearchService.getMatchedMenuItems(controller.searchTerm).then(function success(foundItems) {
                 controller.found = foundItems;
             });
+            } else {
+                controller.found = []; 
+           }     
         };
 
         controller.removeItem = function (itemIndex) {

@@ -1,5 +1,5 @@
 <div>
-    <table>
+    <table ng-if="itemsController.foundItems.length > 0">
         <tr ng-repeat="item in itemsController.foundItems">
             <td>{{item.name}}</td>
             <td>{{item.short_name}}</td>
@@ -7,4 +7,5 @@
             <td><button ng-click="itemsController.onRemove({index: $index});">Don't want this one!</button></td>
         </tr>
     </table>
+    <div class="error" ng-if="itemsController.foundItems.length === 0">Nothing found</div>
 </div>
