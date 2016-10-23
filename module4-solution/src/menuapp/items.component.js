@@ -1,7 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('MenuApp').component('items', {
-        templateUrl: 'src/menuapp/templates/items.template.html'
+    angular.module('MenuApp').component('itemsComponent', {
+        templateUrl: 'src/menuapp/templates/items.template.html',
+        bindings: {
+            items: '<'
+        }
     });  
 })();
