@@ -1,0 +1,20 @@
+<fieldset>
+    <legend>Sign up</legend>
+    <form name="signupForm" novalidate>
+        <input type="text" name="firstName" placeholder="First name" ng-model="signupCtrl.firstName" required>
+        <br />
+        <input type="text" name="lastName" placeholder="Last name" ng-model="signupCtrl.lastName" required>
+        <br />
+        <input type="email" name="email" placeholder="Email address" ng-model="signupCtrl.email" required>
+        <br />
+        <input type="text" name="phone" placeholder="Phone number" ng-model="signupCtrl.phone" required pattern="(\d{3})-(\d{3})-(\d{4})">
+        <br />
+        <input type="text" name="favoriteDish" placeholder="Favorite dish" ng-model="signupCtrl.favoriteDish" required>
+        <br />
+
+        <button ng-click="signupCtrl.submit()" ng-disabled="signupForm.$invalid">Submit</button>
+    </form>
+</fieldset>
+
+<span ng-if="signupCtrl.dishValid">Your information has been saved</span>
+<span ng-if="signupCtrl.dishInvalid">No such menu number exists</span>

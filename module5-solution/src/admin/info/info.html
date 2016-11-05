@@ -1,0 +1,12 @@
+<div ng-if="infoCtrl.isSignedUp()">
+    First name: {{infoCtrl.user.firstName}} <br />
+    Last name: {{infoCtrl.user.lastName}}  <br />
+    Email: {{infoCtrl.user.email}} <br />
+    Phone: {{infoCtrl.user.phone}} <br />
+
+    <menu-item menu-item="infoCtrl.user.menuItem" />
+     <br />
+</div>
+<div ng-if="!infoCtrl.isSignedUp()">
+    Not signed up. <a ui-sref="admin.signup">Sign up now!</a>
+</div>
